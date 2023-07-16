@@ -27,7 +27,6 @@ public class MainView extends VerticalLayout {
         Binder<Value> binder = new Binder<>(Value.class);
         binder.forField(textField)
                 .withValidator(text -> text
-                        .replace(" ", "")
                         .chars()
                         .filter(ch -> (ch >= '0' && ch <= '9'))
                         .count() == text.length(), "Not a number")
